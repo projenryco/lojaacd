@@ -174,3 +174,7 @@ filter: grayscale(100%);
 }
 
 
+.modo-preto-e-branco {
+    background-color: #000;
+    color: #fff;
+  }
