@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de roupa</title>
+    <link rel="stylesheet" href="style.css">
+   
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Início</a></li>
+                <li><a href="masculino.html">Masculino</a></li>
+                <li><a href="feminino.html">Feminino</a></li>
+                
+                
+            </ul>
+        </nav>
+    </header>
+    <button id="aumentar-texto"><img src="img/a_mais.png" class=icone title-="Ferramenta aumentar texto"></button>
+    <button id="diminuir-texto" ><img src="img/a_menos.png" class=icone title="Ferramenta diminuir texto”"></button>
+    <button id="alternar-contraste"><img src="img/alto_contraste.png" class=icone title="Ferramenta alto contraste"></button>
+    <button id="preto-e-branco"><img src="img/preto_e_branco.png" class=icone title-="Ferramenta preto e branco"></button>
+    <button id="comando-de-voz"><img src="voz.png" class=icone title-="Ferramenta comando de voz"></button>
+    
+    <main>
+        <h1>Loja de Roupas</h1>
+        <p>Roupas de todos os estilo, barata e boa</p>
+        <div class="game-grid">
+            <div class="game-card">
+                <img src="img/roupam1.jpg" alt="Roupa de academia">
+                <h2>Roupa de academia</h2>
+                <a href="img/roupam1.jpg" class="btn">R$54,90</a>
+            </div>
+            <div class="game-card">
+                <img src="img/streetm.jpg" alt="Roupaa Masculina Streetwear">
+                <h2>Roupa street wear</h2>
+                <a href="img/streetm.jpg" class="btn">R$99,90</a>
+            </div>
+            <div class="game-card">
+                <img src="img/femiaca.avif" alt="Roupa feminina academia">
+                <h2>Roupa feminina ACademia</h2>
+                <a href="feminino.html" class="btn">R$149,90</a>
+            </div>
+        </div>
+        
+        
+    </main>
+
+    <footer>
+        <p>&copy; Lojinha enryco</p>
+    </footer>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+          <div class="vw-plugin-top-wrapper"></div>
+        </div>
+      </div>
+
+<script>
+    window.onload = function() {
+      var corpoDaPagina = document.querySelector('body');
+      var aumentarTexto = document.getElementById('aumentar-texto');
+      var diminuirTexto = document.getElementById('diminuir-texto');
+  
+      var fontSize = 100;
+      var qntAumentarDiminuir = 10;
+  
+      aumentarTexto.addEventListener('click', function(event) {
+        fontSize = fontSize + qntAumentarDiminuir;
+        corpoDaPagina.style.fontSize = fontSize + '%';
+      });
+  
+      diminuirTexto.addEventListener('click', function(event) {
+        fontSize = fontSize - qntAumentarDiminuir;
+        corpoDaPagina.style.fontSize = fontSize + '%';
+      });
+    }
+  </script>
+
+
+
+<script>
+    document.getElementById('preto-e-branco').addEventListener
+    ('click', function()
+    {
+            document.body.classList.toggle('preto-e-branco');
+    }
+    );
+</script>
+
+
+
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+
+
+<script>
+    document.getELement 
+</script>
+    </body>
+    </html>
