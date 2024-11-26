@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Roupas</title>
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="masculino.html">Masculino</a>
+        <a href="feminino.html">Feminino</a>
+        <a href="carrinho.html">Carrinho</a>
+    </nav>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+        }
+        #produtos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .produto {
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            text-align: center;
+        }
+        .carrinho {
+            margin-top: 20px;
+            padding: 10px;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .carrinho ul {
+            list-style-type: none;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Carrinho de Compras</h1>
+
+    <div class="carrinho">
+        <h2>Itens no Carrinho</h2>
+        <ul id="lista-carrinho"></ul>
+        <p id="total">Total: R$0,00</p>
+    </div>
+
+    <script>
+        let total = 0;
+        const listaCarrinho = document.getElementById('lista-carrinho');
+        const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+        carrinho.forEach(item => {
+            const li = document.createElement('li');
+            li.textContent = `${item.nome} - R$${item.preco.toFixed(2)}`;
+            listaCarrinho.appendChild(li);
+            total += item.preco;
+        });
+
+        document.getElementById('total').textContent = `Total: R$${total.toFixed(2)}`;
+    </script>
+
+</body>
+</html>

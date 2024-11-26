@@ -10,12 +10,10 @@
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="index.html" class="active">Início</a></li>
-                <li><a href="masculino.html">Masculino</a></li>
-                <li><a href="feminino.html">Feminino</a></li>
-               
-            </ul>
+            <a href="index.html">Início</a>
+            <a href="masculino.html">Masculino</a>
+            <a href="feminino.html">Feminino</a>
+            <a href="carrinho.html">Carrinho</a>
         </nav>
     </header>
     
@@ -28,23 +26,48 @@
     <main>
         
         
-        <div class="game-grid">
-            <div class="game-card">
-                <img src="img/roupam1.jpg" alt="Roupa de academia">
-                <h2>Roupa de academia</h2>
-                <a href="img/roupam1.jpg" class="btn">R$54,90</a>
+        <!DOCTYPE html>
+        <html lang="pt-BR">
+        <head>
+            <meta charset="UTF-8">
+            <title>Masculino - Loja de Roupas</title>
+            <style>
+                /* Estilos semelhantes ao exemplo anterior */
+            </style>
+        </head>
+        <body>
+        
+            <h1>Roupas Masculinas</h1>
+        
+            <div id="produtos">
+                <div class="produto">
+                    <h2>Roupa de Academia</h2>
+                    <p>R$54,90</p>
+                    <button onclick="adicionarAoCarrinho('Roupa de Academia', 54.90)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto">
+                    <h2>Roupa Street Wear</h2>
+                    <p>R$99,90</p>
+                    <button onclick="adicionarAoCarrinho('Roupa Street Wear', 99.90)">Adicionar ao Carrinho</button>
+                </div>
+                <div class="produto">
+                    <h2>Roupa Social Masculina</h2>
+                    <p>R$199,90</p>
+                    <button onclick="adicionarAoCarrinho('Roupa Social Masculina', 199.90)">Adicionar ao Carrinho</button>
+                </div>
             </div>
-            <div class="game-card">
-                <img src="img/streetm.jpg" alt="Roupaa Masculina Streetwear">
-                <h2>Roupa street wear</h2>
-                <a href="img/streetm.jpg" class="btn">R$99,90</a>
-            </div>
-            <div class="game-card">
-                <img src="img/socialm.jpg" alt="Roupa Social Masculina">
-                <h2>Roupa Social MAsculina</h2>
-                <a href="img/socialm.jpg" class="btn">R$199,90</a>
-            </div>
-        </div>
+        
+            <script>
+                function adicionarAoCarrinho(nome, preco) {
+                    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+                    carrinho.push({ nome, preco });
+                    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+                    alert(`${nome} adicionado ao carrinho!`);
+                }
+            </script>
+        
+        </body>
+        </html>
         </ul>
     </main>
 
